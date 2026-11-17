@@ -1,0 +1,152 @@
+Login · HTML
+{% extends 'base.html' %}
+{% block title %}Login Form{% endblock %}
+{% block content %}
+<style>
+  .login-wrap {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    background: #eef5f4;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+ 
+  .login-card {
+    width: 100%;
+    max-width: 400px;
+    background: #ffffff;
+    border: 1px solid #d3e3e1;
+    border-top: 5px solid #0f766e;
+    border-radius: 10px;
+    padding: 2.25rem 2rem;
+    box-shadow: 0 10px 30px rgba(15, 118, 110, 0.12);
+  }
+ 
+  .login-card h2 {
+    margin: 0 0 0.25rem;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #0b3b38;
+  }
+ 
+  .login-card .subtitle {
+    margin: 0 0 1.5rem;
+    color: #5b7270;
+    font-size: 0.95rem;
+  }
+ 
+  .login-card .field {
+    margin-bottom: 1.1rem;
+  }
+ 
+  .login-card label {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #0b3b38;
+  }
+ 
+  .login-card input[type="text"],
+  .login-card input[type="password"] {
+    width: 100%;
+    padding: 0.7rem 0.85rem;
+    font-size: 1rem;
+    color: #12312f;
+    background: #f8fbfb;
+    border: 1px solid #b9cfcc;
+    border-radius: 6px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+ 
+  .login-card input:focus {
+    outline: none;
+    background: #ffffff;
+    border-color: #0f766e;
+    box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.2);
+  }
+ 
+  .login-card button[type="submit"] {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: #0f766e;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+ 
+  .login-card button[type="submit"]:hover {
+    background: #0b5c56;
+  }
+ 
+  .login-card button[type="submit"]:focus-visible {
+    outline: 3px solid #f2a93b;
+    outline-offset: 2px;
+  }
+ 
+  .login-card .register {
+    margin: 1.5rem 0 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #5b7270;
+  }
+ 
+  .login-card .register a {
+    color: #0f766e;
+    font-weight: 600;
+    text-decoration: none;
+  }
+ 
+  .login-card .register a:hover {
+    text-decoration: underline;
+  }
+ 
+  .login-card .message {
+    margin-bottom: 1rem;
+    padding: 0.65rem 0.85rem;
+    font-size: 0.9rem;
+    color: #8a1f1f;
+    background: #fdeeee;
+    border-left: 4px solid #c0392b;
+    border-radius: 4px;
+  }
+</style>
+ 
+<div class="login-wrap">
+  <div class="login-card">
+    <h2>Login Form</h2>
+    <p class="subtitle">Sign in to open your patient dashboard.</p>
+ 
+    {% if messages %}
+      {% for message in messages %}
+        <div class="message">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+ 
+    <form action="" method="post">
+      {% csrf_token %}
+ 
+      <div class="field">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" autocomplete="username" required>
+      </div>
+ 
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" autocomplete="current-password" required>
+      </div>
+ 
+      <button type="submit">Login</button>
+    </form>
+ 
+    <p class="register">Don't have an account? <a href="{% url 'index' %}">Register here</a></p>
+  </div>
+</div>
+{% endblock %}
