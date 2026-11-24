@@ -33,6 +33,7 @@ urlpatterns = [
     path('patients/add/', views.patient_create, name='patient_create'),
     path('patients/<int:pk>/edit/', views.patient_update, name='patient_update'),
     path('patients/<int:pk>/delete/', views.patient_delete, name='patient_delete'),
+    path('make_payment/',views.make_payment,name='make_payment'),
     path('', include(router.urls)),
    
   
