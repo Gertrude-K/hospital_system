@@ -10,173 +10,173 @@ import PatientTable from "./components/PatientTable";
 
 import Footer from "./components/Footer";
 
- 
+
 
 function App() {
 
- 
 
-return (
 
- 
+    return (
 
-<div className="container-fluid">
 
- 
 
-<div className="row">
+        <div className="container-fluid">
 
- 
 
-{/* SIDEBAR */}
 
- 
+            <div className="row">
 
-<div className="col-md-2 p-0">
 
- 
 
-<Sidebar />
+                {/* SIDEBAR */}
 
- 
 
-</div>
 
- 
+                <div className="col-md-2 p-0">
 
- 
 
-{/* MAIN CONTENT */}
 
- 
+                    <Sidebar />
 
-<div className="col-md-10 main-content">
 
- 
 
-{/* TOPBAR */}
+                </div>
 
- 
 
-<Topbar />
 
- 
 
- 
 
-{/* STATISTICS */}
+                {/* MAIN CONTENT */}
 
- 
 
-<div className="row g-3 mb-4">
 
- 
+                <div className="col-md-10 main-content">
 
-<StatCard
 
-title="Appointments"
 
-count="04"
+                    {/* TOPBAR */}
 
-icon="bi-calendar-check"
 
-color="primary"
 
-/>
+                    <Topbar />
 
- 
 
-<StatCard
 
-title="Medical Records"
 
-count="08"
 
-icon="bi-file-medical"
+                    {/* STATISTICS */}
 
-color="success"
 
-/>
 
- 
+                    <div className="row g-3 mb-4">
 
-<StatCard
 
-title="Prescriptions"
 
-count="03"
+                        <StatCard
 
-icon="bi-capsule"
+                            title="Appointments"
 
-color="warning"
+                            count="04"
 
-/>
+                            icon="bi-calendar-check"
 
- 
+                            color="primary"
 
-<StatCard
+                        />
 
-title="Pending Bills"
 
-count="02"
 
-icon="bi-wallet2"
+                        <StatCard
 
-color="danger"
+                            title="Medical Records"
 
-/>
+                            count="08"
 
- 
+                            icon="bi-file-medical"
 
-</div>
+                            color="success"
 
- 
+                        />
 
- 
 
-{/* PATIENT PROFILE */}
-<PatientProfile />
 
- 
+                        <StatCard
 
- 
+                            title="Prescriptions"
 
-{/* PATIENT RECORDS */}
+                            count="03"
 
- 
+                            icon="bi-capsule"
 
-<PatientTable />
+                            color="warning"
 
- 
+                        />
 
- 
 
-{/* FOOTER */}
 
- 
+                        <StatCard
 
-<Footer />
+                            title="Pending Bills"
 
- 
+                            count="02"
 
-</div>
+                            icon="bi-wallet2"
 
- 
+                            color="danger"
 
-</div>
+                        />
 
- 
 
-</div>
 
- 
+                    </div>
 
-);
 
- 
+
+
+
+                    {/* PATIENT PROFILE */}
+                    <PatientProfile />
+
+
+
+
+
+                    {/* PATIENT RECORDS */}
+
+
+
+                    <PatientTable />
+
+
+
+
+
+                    {/* FOOTER */}
+
+
+
+                    <Footer />
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    );
+
+
 
 }
 
- 
+
 
 export default App;
