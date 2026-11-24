@@ -1,81 +1,81 @@
 function Topbar() {
 
- 
 
-return (
 
- 
+    return (
 
-<div className="d-flex justify-content-between align-items-center mb-4">
 
- 
 
-<div>
+        <div className="d-flex justify-content-between align-items-center mb-4">
 
-<h3 className="fw-bold">Dashboard</h3>
 
- 
 
-<p className="text-muted">
+            <div>
 
-Welcome back, Alex Morgan!
+                <h3 className="fw-bold">Dashboard</h3>
 
-</p>
 
-</div>
 
- 
+                <p className="text-muted">
 
-<div className="d-flex align-items-center gap-3">
+                    Welcome back, Alex Morgan!
 
- 
+                </p>
 
-<button className="btn btn-light">
+            </div>
 
-<i className="bi bi-bell"></i>
 
-</button>
 
- 
+            <div className="d-flex align-items-center gap-3">
 
-<div className="text-end">
 
-<strong>Alex Morgan</strong>
 
- 
+                <button className="btn btn-light">
 
-<small className="d-block text-muted">
+                    <i className="bi bi-bell"></i>
 
-Patient
+                </button>
 
-</small>
 
-</div>
 
- 
+                <div className="text-end">
 
-<div className="profile-image">
+                    <strong>Alex Morgan</strong>
 
-<i className="bi bi-person"></i>
 
-</div>
 
- 
+                    <small className="d-block text-muted">
 
-</div>
+                        Patient
 
- 
+                    </small>
 
-</div>
+                </div>
 
- 
 
-);
 
- 
+                <div className="profile-image">
+
+                    <i className="bi bi-person"></i>
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    );
+
+
 
 }
 
- 
+
 
 export default Topbar;

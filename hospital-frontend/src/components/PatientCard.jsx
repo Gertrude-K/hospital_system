@@ -1,5 +1,5 @@
-function PatientCard(props){
-    return(
+function PatientCard(props) {
+    return (
         <div>
             <h3>{props.name}</h3>
             <p>{props.age}</p>
@@ -7,7 +7,7 @@ function PatientCard(props){
 
         </div>
     )
-        
+
 }
 
 export default PatientCard;

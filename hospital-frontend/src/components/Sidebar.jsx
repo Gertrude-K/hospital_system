@@ -1,115 +1,115 @@
 function Sidebar() {
 
- 
 
-return (
 
- 
+    return (
 
-<div className="sidebar">
 
- 
 
-<h4>
+        <div className="sidebar">
 
-<i className="bi bi-heart-pulse-fill text-info"></i>
 
-MediCare
 
-</h4>
+            <h4>
 
- 
+                <i className="bi bi-heart-pulse-fill text-info"></i>
 
-<a href="#" className="active">
+                MediCare
 
-<i className="bi bi-grid me-2"></i>
+            </h4>
 
-Dashboard
 
-</a>
 
- 
+            <a href="#" className="active">
 
-<a href="#">
+                <i className="bi bi-grid me-2"></i>
 
-<i className="bi bi-person me-2"></i>
+                Dashboard
 
-My Profile
+            </a>
 
-</a>
 
- 
 
-<a href="#">
+            <a href="#">
 
-<i className="bi bi-calendar-check me-2"></i>
+                <i className="bi bi-person me-2"></i>
 
-Appointments
+                My Profile
 
-</a>
+            </a>
 
- 
 
-<a href="#">
 
-<i className="bi bi-file-medical me-2"></i>
+            <a href="#">
 
-Medical Records
+                <i className="bi bi-calendar-check me-2"></i>
 
-</a>
+                Appointments
 
- 
+            </a>
 
-<a href="#">
 
-<i className="bi bi-capsule me-2"></i>
 
-Prescriptions
+            <a href="#">
 
-</a>
+                <i className="bi bi-file-medical me-2"></i>
 
- 
+                Medical Records
 
-<a href="#">
+            </a>
 
-<i className="bi bi-credit-card me-2"></i>
 
-Billing
 
-</a>
+            <a href="#">
 
- 
+                <i className="bi bi-capsule me-2"></i>
 
-<a href="#">
+                Prescriptions
 
-<i className="bi bi-gear me-2"></i>
+            </a>
 
-Settings
 
-</a>
 
- 
+            <a href="#">
 
-<a href="#">
+                <i className="bi bi-credit-card me-2"></i>
 
-<i className="bi bi-box-arrow-right me-2"></i>
+                Billing
 
-Logout
+            </a>
 
-</a>
 
- 
 
-</div>
+            <a href="#">
 
- 
+                <i className="bi bi-gear me-2"></i>
 
-);
+                Settings
 
- 
+            </a>
+
+
+
+            <a href="#">
+
+                <i className="bi bi-box-arrow-right me-2"></i>
+
+                Logout
+
+            </a>
+
+
+
+        </div>
+
+
+
+    );
+
+
 
 }
 
- 
+
 
 export default Sidebar;

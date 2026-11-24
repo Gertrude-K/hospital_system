@@ -1,109 +1,109 @@
 function PatientProfile() {
 
- 
 
-return (
 
- 
+    return (
 
-<div className="card profile-card mb-4">
 
- 
 
-<div className="card-body">
+        <div className="card profile-card mb-4">
 
- 
 
-<div className="d-flex justify-content-between mb-4">
 
- 
+            <div className="card-body">
 
-<h5 className="fw-bold">
 
-My Personal Information
 
-</h5>
+                <div className="d-flex justify-content-between mb-4">
 
- 
 
-<button className="btn btn-outline-primary btn-sm">
 
- 
+                    <h5 className="fw-bold">
 
-<i className="bi bi-pencil"></i> Edit Profile
+                        My Personal Information
 
- 
+                    </h5>
 
-</button>
 
- 
 
-</div>
+                    <button className="btn btn-outline-primary btn-sm">
 
- 
 
-<div className="row">
 
- 
+                        <i className="bi bi-pencil"></i> Edit Profile
 
-<div className="col-md-3 mb-3">
 
-<small className="text-muted">Patient ID</small>
 
-<h6>PAT-001</h6>
+                    </button>
 
-</div>
 
- 
 
-<div className="col-md-3 mb-3">
+                </div>
 
-<small className="text-muted">Full Name</small>
 
-<h6>Alex Morgan</h6>
 
-</div>
+                <div className="row">
 
- 
 
-<div className="col-md-3 mb-3">
 
-<small className="text-muted">Email Address</small>
+                    <div className="col-md-3 mb-3">
 
-<h6>alex@gmail.com</h6>
+                        <small className="text-muted">Patient ID</small>
 
-</div>
+                        <h6>PAT-001</h6>
 
- 
+                    </div>
 
-<div className="col-md-3 mb-3">
 
-<small className="text-muted">Phone Number</small>
 
-<h6>+254 700 123 456</h6>
+                    <div className="col-md-3 mb-3">
 
-</div>
+                        <small className="text-muted">Full Name</small>
 
- 
+                        <h6>Alex Morgan</h6>
 
-</div>
+                    </div>
 
- 
 
-</div>
 
- 
+                    <div className="col-md-3 mb-3">
 
-</div>
+                        <small className="text-muted">Email Address</small>
 
- 
+                        <h6>alex@gmail.com</h6>
 
-);
+                    </div>
 
- 
+
+
+                    <div className="col-md-3 mb-3">
+
+                        <small className="text-muted">Phone Number</small>
+
+                        <h6>+254 700 123 456</h6>
+
+                    </div>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    );
+
+
 
 }
 
- 
+
 
 export default PatientProfile;

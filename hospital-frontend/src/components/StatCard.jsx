@@ -1,77 +1,77 @@
 function StatCard({ title, count, icon, color }) {
 
- 
 
-return (
 
- 
+    return (
 
-<div className="col-lg-3 col-md-6">
 
- 
 
-<div className="card dashboard-card p-3">
+        <div className="col-lg-3 col-md-6">
 
- 
 
-<div className="d-flex justify-content-between">
 
- 
+            <div className="card dashboard-card p-3">
 
-<div>
 
- 
 
-<small className="text-muted">
+                <div className="d-flex justify-content-between">
 
-{title}
 
-</small>
 
- 
+                    <div>
 
-<h3 className="fw-bold mt-2">
 
-{count}
 
-</h3>
+                        <small className="text-muted">
 
- 
+                            {title}
 
-</div>
+                        </small>
 
- 
 
-<div className={`card-icon bg-${color}-subtle text-${color}`}>
 
- 
+                        <h3 className="fw-bold mt-2">
 
-<i className={`bi ${icon}`}></i>
+                            {count}
 
- 
+                        </h3>
 
-</div>
 
- 
 
-</div>
+                    </div>
 
- 
 
-</div>
 
- 
+                    <div className={`card-icon bg-${color}-subtle text-${color}`}>
 
-</div>
 
- 
 
-);
+                        <i className={`bi ${icon}`}></i>
 
- 
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    );
+
+
 
 }
 
- 
+
 
 export default StatCard;

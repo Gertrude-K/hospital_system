@@ -1,213 +1,213 @@
 function PatientTable() {
 
- 
 
-return (
 
- 
+    return (
 
-<div className="card table-card">
 
- 
 
-<div className="card-body">
+        <div className="card table-card">
 
- 
 
-<div className="d-flex flex-wrap justify-content-between align-items-center mb-4">
 
- 
+            <div className="card-body">
 
-<div>
 
-<h5 className="fw-bold">Patient Records</h5>
 
- 
+                <div className="d-flex flex-wrap justify-content-between align-items-center mb-4">
 
-<small className="text-muted">
 
-Manage patient information
 
-</small>
+                    <div>
 
-</div>
+                        <h5 className="fw-bold">Patient Records</h5>
 
- 
 
-<button className="btn btn-primary">
 
- 
+                        <small className="text-muted">
 
-<i className="bi bi-plus-circle me-1"></i>
+                            Manage patient information
 
- 
+                        </small>
 
-Add Patient
+                    </div>
 
- 
 
-</button>
 
- 
+                    <button className="btn btn-primary">
 
-</div>
 
- 
 
-<div className="row mb-3">
+                        <i className="bi bi-plus-circle me-1"></i>
 
- 
 
-<div className="col-md-4">
 
- 
+                        Add Patient
 
-<input
 
-type="text"
 
-className="form-control"
+                    </button>
 
-placeholder="Search patient..."
 
-/>
 
- 
+                </div>
 
-</div>
 
- 
 
-</div>
+                <div className="row mb-3">
 
- 
 
-<div className="table-responsive">
 
- 
+                    <div className="col-md-4">
 
-<table className="table table-hover">
 
- 
 
-<thead>
+                        <input
 
-<tr>
+                            type="text"
 
-<th>Patient ID</th>
+                            className="form-control"
 
-<th>Full Name</th>
+                            placeholder="Search patient..."
 
-<th>Email</th>
+                        />
 
-<th>Phone</th>
 
-<th>Status</th>
 
-<th>Actions</th>
+                    </div>
 
-</tr>
 
-</thead>
 
- 
+                </div>
 
-<tbody>
 
- 
 
-<tr>
+                <div className="table-responsive">
 
- 
 
-<td>880293</td>
 
- 
+                    <table className="table table-hover">
 
-<td>Andrew Jones</td>
 
- 
 
-<td>andrew@gmail.com</td>
+                        <thead>
 
- 
+                            <tr>
 
-<td>0712345673</td>
+                                <th>Patient ID</th>
 
- 
+                                <th>Full Name</th>
 
-<td>
+                                <th>Email</th>
 
-<span className="badge bg-success">
+                                <th>Phone</th>
 
-Active
+                                <th>Status</th>
 
-</span>
+                                <th>Actions</th>
 
-</td>
+                            </tr>
 
-<td>
+                        </thead>
 
- 
 
-<button className="btn btn-sm btn-outline-info me-1">
 
-<i className="bi bi-eye"></i>
+                        <tbody>
 
-</button>
 
- 
 
-<button className="btn btn-sm btn-outline-primary me-1">
+                            <tr>
 
-<i className="bi bi-pencil"></i>
 
-</button>
 
- 
+                                <td>880293</td>
 
-<button className="btn btn-sm btn-outline-danger">
 
-<i className="bi bi-trash"></i>
 
-</button>
+                                <td>Andrew Jones</td>
 
- 
 
-</td>
 
- 
+                                <td>andrew@gmail.com</td>
 
-</tr>
 
- 
 
-</tbody>
+                                <td>0712345673</td>
 
- 
 
-</table>
 
- 
+                                <td>
 
-</div>
+                                    <span className="badge bg-success">
 
- 
+                                        Active
 
-</div>
+                                    </span>
 
- 
+                                </td>
 
-</div>
+                                <td>
 
- 
 
-);
 
- 
+                                    <button className="btn btn-sm btn-outline-info me-1">
+
+                                        <i className="bi bi-eye"></i>
+
+                                    </button>
+
+
+
+                                    <button className="btn btn-sm btn-outline-primary me-1">
+
+                                        <i className="bi bi-pencil"></i>
+
+                                    </button>
+
+
+
+                                    <button className="btn btn-sm btn-outline-danger">
+
+                                        <i className="bi bi-trash"></i>
+
+                                    </button>
+
+
+
+                                </td>
+
+
+
+                            </tr>
+
+
+
+                        </tbody>
+
+
+
+                    </table>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    );
+
+
 
 }
 
- 
+
 
 export default PatientTable;
