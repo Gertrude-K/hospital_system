@@ -1,14 +1,14 @@
-import Sidebar from "./components/Sidebar";
+import Sidebar from "./src/components/Sidebar";
 
-import Topbar from "./components/Topbar";
+import Topbar from "./src/components/Topbar";
 
-import StatCard from "./components/StatCard";
+import StatCard from "./src/components/StatCard";
 
-import PatientProfile from "./components/PatientProfile";
+import PatientProfile from "./src/components/PatientProfile";
 
-import PatientTable from "./components/PatientTable";
+import PatientTable from "./src/components/PatientTable";
 
-import Footer from "./components/Footer";
+import Footer from "./src/components/Footer";
 
 
 
