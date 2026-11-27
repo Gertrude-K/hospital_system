@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 
 import Sidebar from './components/Sidebar';
 import Topbar from './components/Topbar';
@@ -8,35 +8,169 @@ import PatientProfile from './components/PatientProfile';
 import PatientTable from './components/PatientTable';
 import PatientForm from './components/PatientForm';
 import Footer from './components/Footer';
+import api from './services/api';
 
 function App() {
 
     // Initial patient records
     const [patients, setPatients] = useState([
-        {
-            id: '880293',
-            fullName: 'Andrew Jones',
-            email: 'andrew@gmail.com',
-            phone: '0712345673'
-        }
+        
     ]);
 
-    // Controls whether the form is displayed
+    useEffect(()=>{
+        api.get('patients/')
+            .then(response => {
+                setPatients(response.data);
+            })
+             .catch(error => {
+                console.error('Error fetching patients:',error);
+                
+             });
+    },[]);
+
+    // Form visibility
     const [showForm, setShowForm] = useState(false);
 
-    // Add a new patient
-    const handleAddPatient = (patientData) => {
+    // Patient currently being edited
+    const [editingPatient, setEditingPatient] = useState(null);
 
-        const newPatient = {
-            id: `PAT-${String(patients.length + 1).padStart(3, '0')}`,
-            ...patientData
-        };
+    // Search text
+    const [searchTerm, setSearchTerm] = useState('');
 
-        setPatients([...patients, newPatient]);
-
-        setShowForm(false);
-
+    // Open form for adding a new patient
+    const handleShowForm = () => {
+        setEditingPatient(null);
+        setShowForm(true);
     };
+
+    // Close form
+    const handleCloseForm = () => {
+        setShowForm(false);
+        setEditingPatient(null);
+    };
+
+    // Open form for editing
+    const handleEditPatient = (patient) => {
+        setEditingPatient(patient);
+        setShowForm(true);
+    };
+
+    // Save a new patient or update an existing patient
+
+
+    
+
+const handleSavePatient = async (patientData) => {
+
+    try {
+
+        if (editingPatient) {
+
+            // UPDATE EXISTING PATIENT
+            const response = await api.put(
+                `patients/${editingPatient.id}/`,
+                patientData
+            );
+
+            // Update React state
+            setPatients((previousPatients) =>
+                previousPatients.map((patient) =>
+                    patient.id === editingPatient.id
+                        ? response.data
+                        : patient
+                )
+            );
+
+            alert('Patient updated successfully!');
+
+        } else {
+
+            // CREATE NEW PATIENT
+            const response = await api.post(
+                'patients/',
+                patientData
+            );
+
+            // Update React state
+            setPatients((previousPatients) => [
+                ...previousPatients,
+                response.data
+            ]);
+
+            alert('Patient registered successfully!');
+
+        }
+
+        // Close form
+        setShowForm(false);
+        setEditingPatient(null);
+
+    } catch (error) {
+
+        console.error('Error saving patient:', error);
+
+        console.error('Server response:', error.response?.data);
+
+        alert('Unable to save patient. Please check the details.');
+
+    }
+
+};
+
+
+    // Delete a patient
+   
+const handleDeletePatient = async (patientId) => {
+
+    const confirmDelete = window.confirm(
+        'Are you sure you want to delete this patient?'
+    );
+
+    if (confirmDelete) {
+
+        try {
+
+            // Send DELETE request to Django
+            await api.delete(`patients/${patientId}/`);
+
+            // Update React state after successful deletion
+            setPatients((previousPatients) =>
+                previousPatients.filter(
+                    (patient) => patient.id !== patientId
+                )
+            );
+
+            alert('Patient deleted successfully!');
+
+        } catch (error) {
+
+            console.error('Error deleting patient:', error);
+
+            console.error('Server response:', error.response?.data);
+
+            alert('Failed to delete patient.');
+
+        }
+
+    }
+
+};
+
+
+    // Search and filter patients
+    const filteredPatients = patients.filter((patient) => {
+
+        const search = searchTerm.toLowerCase();
+
+        return (
+            patient.name.toLowerCase().includes(search) ||
+            patient.email.toLowerCase().includes(search) ||
+            patient.contact_number.toLowerCase().includes(search) ||
+            patient.patient_id.toLowerCase().includes(search)
+        );
+
+    });
+
 
     return (
 
@@ -90,20 +224,24 @@ function App() {
                     {/* PATIENT PROFILE */}
                     <PatientProfile />
 
-                    {/* SHOW FORM WHEN REQUESTED */}
+                    {/* PATIENT FORM */}
                     {showForm && (
                         <PatientForm
-                            onAddPatient={handleAddPatient}
-                            onCancel={() => setShowForm(false)}
+                            key={editingPatient?.id || 'new-patient'}
+                            initialData={editingPatient}
+                            onSavePatient={handleSavePatient}
+                            onCancel={handleCloseForm}
                         />
                     )}
 
-                    
-
                     {/* PATIENT TABLE */}
                     <PatientTable
-                        patients={patients}
-                        onAddClick={() => setShowForm(true)}
+                        patients={filteredPatients}
+                        onAddClick={handleShowForm}
+                        onEdit={handleEditPatient}
+                        onDelete={handleDeletePatient}
+                        searchTerm={searchTerm}
+                        onSearchChange={setSearchTerm}
                     />
 
                     <Footer />
@@ -114,6 +252,7 @@ function App() {
 
         </div>
     );
+
 }
 
 export default App;
